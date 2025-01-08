@@ -1,33 +1,32 @@
-#include <iostream>   // Для работы с вводом/выводом
-#include <cstring>    // Для функций memset и memcpy
-#include <limits>     // Для numeric_limits (используется при очистке ввода)
-#include <string>     // Для работы со строками
-#include <cctype>     // Для функции isdigit
+#include <iostream>
+#include <cstring>
+#include <limits>
+#include <string>
+#include <cctype>
 #include "header.h"
 using namespace std;
 
-const int MAX_DIGITS = 10000; // Максимальное количество разрядов в длинном числе
+const int MAX_DIGITS = 10000; // РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЂР°Р·СЂСЏРґРѕРІ РІ РґР»РёРЅРЅРѕРј С‡РёСЃР»Рµ
 
 
 int main() {
     setlocale(LC_ALL, "ru");
-    long long n = getValidInput();             // Получаем корректное значение n от пользователя
+    long long n = getValidInput();
 
-    // Инициализация массивов для длинных чисел
+    // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РјР°СЃСЃРёРІРѕРІ РґР»СЏ РґР»РёРЅРЅС‹С… С‡РёСЃРµР»
     int num1[MAX_DIGITS] = { 0 }, num2[MAX_DIGITS] = { 0 }, num3[MAX_DIGITS] = { 0 };
-    toLongNumber(n, num1);                     // Преобразуем n в длинное число
-    toLongNumber(n + 1, num2);                 // Преобразуем n+1 в длинное число
-    toLongNumber(2 * n + 1, num3);             // Преобразуем 2n+1 в длинное число
+    toLongNumber(n, num1);                     // РџСЂРµРѕР±СЂР°Р·СѓРµРј n РІ РґР»РёРЅРЅРѕРµ С‡РёСЃР»Рѕ
+    toLongNumber(n + 1, num2);                 // РџСЂРµРѕР±СЂР°Р·СѓРµРј n+1 РІ РґР»РёРЅРЅРѕРµ С‡РёСЃР»Рѕ
+    toLongNumber(2 * n + 1, num3);             // РџСЂРµРѕР±СЂР°Р·СѓРµРј 2n+1 РІ РґР»РёРЅРЅРѕРµ С‡РёСЃР»Рѕ
 
-    // Вычисляем n * (n + 1) * (2n + 1)
+    // Р’С‹С‡РёСЃР»СЏРµРј n * (n + 1) * (2n + 1)
     int temp[MAX_DIGITS] = { 0 }, result[MAX_DIGITS] = { 0 };
-    multiplyLongNumbers(num1, num2, temp);     // Умножаем n * (n + 1)
-    multiplyLongNumbers(temp, num3, result);  // Умножаем результат на (2n + 1)
+    multiplyLongNumbers(num1, num2, temp);     // РЈРјРЅРѕР¶Р°РµРј n * (n + 1)
+    multiplyLongNumbers(temp, num3, result);   // РЈРјРЅРѕР¶Р°РµРј СЂРµР·СѓР»СЊС‚Р°С‚ РЅР° (2n + 1)
 
-    divideLongNumber(result, 6);              // Делим результат на 6
+    divideLongNumber(result, 6);               // Р”РµР»РёРј СЂРµР·СѓР»СЊС‚Р°С‚ РЅР° 6
 
-    // Вывод результата
-    cout << "Сумма квадратов чисел от 1 до " << n << ": ";
-    printLongNumber(result);                  // Печатаем длинное число
-    return 0;                                 // Завершение программы
+    cout << "РЎСѓРјРјР° РєРІР°РґСЂР°С‚РѕРІ С‡РёСЃРµР» РѕС‚ 1 РґРѕ " << n << ": ";
+    printLongNumber(result);
+    return 0;
 }
