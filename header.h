@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
 
-void multiplyLongNumbers(const int* a, const int* b, int* result); // Функция умножения двух длинных чисел
-void divideLongNumber(int* num, int divisor); // Функция деления длинного числа на короткое число
-void toLongNumber(long long num, int* result); // Функция преобразования числа в массив цифр (длинное число)
-void printLongNumber(const int* num); // Функция вывода длинного числа
-long long getValidInput(); // Функция получения корректного ввода
+void multiplyLongNumbers(const int* a, const int* b, int* result); // Р¤СѓРЅРєС†РёСЏ СѓРјРЅРѕР¶РµРЅРёСЏ РґРІСѓС… РґР»РёРЅРЅС‹С… С‡РёСЃРµР»
+void divideLongNumber(int* num, int divisor); // Р¤СѓРЅРєС†РёСЏ РґРµР»РµРЅРёСЏ РґР»РёРЅРЅРѕРіРѕ С‡РёСЃР»Р° РЅР° РєРѕСЂРѕС‚РєРѕРµ С‡РёСЃР»Рѕ
+void toLongNumber(long long num, int* result); // Р¤СѓРЅРєС†РёСЏ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ С‡РёСЃР»Р° РІ РјР°СЃСЃРёРІ С†РёС„СЂ (РґР»РёРЅРЅРѕРµ С‡РёСЃР»Рѕ)
+void printLongNumber(const int* num); // Р¤СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° РґР»РёРЅРЅРѕРіРѕ С‡РёСЃР»Р°
+long long getValidInput(); // Р¤СѓРЅРєС†РёСЏ РїРѕР»СѓС‡РµРЅРёСЏ РєРѕСЂСЂРµРєС‚РЅРѕРіРѕ РІРІРѕРґР°
 
